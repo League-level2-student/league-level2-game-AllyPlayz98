@@ -1,29 +1,92 @@
+//https://www.pixilart.com
+
+
+
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-public class ZodiacScramble {
-	JFrame jf1;
-	JPanel jp1;
-	public static final int WIDTH = 1000;
-	public static final int HEIGHT = 750;
+public class ZodiacScramble implements KeyListener {
+    static final int MENU = 0;
+    static final int GAME = 1;
+    static final int END = 2;
+    static final int NUM_STATES = 3;
+    
+    private int gameState = MENU;
+    JFrame frame;
 
-	public static void main(String[] args) {
-		ZodiacScramble zs = new ZodiacScramble();
-		zs.setup();
-	}
+    MenuScreen menu;
+    GameScreen game;
+    EndScreen end;
+    
+    public static void main(String[] args) throws Exception {
+        new ZodiacScramble().startGame();
+    }
 
-	public ZodiacScramble() {
-		jf1 = new JFrame();
-		jp1 = new JPanel();
-	}
+    private void startGame() {
+        frame = new JFrame( "Snoose" );
+        frame.setVisible( true );
+        frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+        frame.addKeyListener( this );
+        
+        menu = new MenuScreen( frame );
+        game = new GameScreen( frame );
+        end  = new EndScreen( frame );
+        
+        menu.drawMenu();
+    }
+    
+    private void selectScreen() {
+        
+        if( gameState == MENU ) {
+            menu.drawMenu();
+        } else if( gameState == GAME ) {
+            game.drawGame();
+        } else if( gameState == END ) {
+            end.drawEnd();
+        }
+    }
 
-	private void setup() {
-		jf1.add(jp1);
-		jf1.setVisible(true);
-		jf1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jf1.getContentPane().setPreferredSize(new Dimension(WIDTH, HEIGHT));
-		jf1.pack();
-	}
+    @Override
+    public void keyPressed(KeyEvent arg0) {
+        // TODO Auto-generated method stub
+        if( gameState == MENU ) {
+            menu.removeScreen();
+        } else if( gameState == GAME ) {
+            game.removeScreen();
+        } else if( gameState == END ) {
+            end.removeScreen();
+        }
+        
+        gameState = ( gameState + 1 ) % NUM_STATES;
+        selectScreen();
+    }
+
+    @Override
+    public void keyReleased(KeyEvent arg0) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void keyTyped(KeyEvent arg0) {
+        // TODO Auto-generated method stub
+        
+    }
+
 }
