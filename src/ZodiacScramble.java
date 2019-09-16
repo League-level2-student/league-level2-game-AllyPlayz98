@@ -39,7 +39,7 @@ public class ZodiacScramble implements KeyListener {
     }
 
     private void startGame() {
-        frame = new JFrame( "Snoose" );
+        frame = new JFrame( "Zodiac Scramble" );
         frame.setVisible( true );
         frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         frame.addKeyListener( this );
