@@ -48,11 +48,11 @@ public class MenuScreen extends Screen {
         
         inslabel.setFont(new Font( "Serif", Font.PLAIN, 35));
         inslabel.setForeground(textColor);
-        inslabel.setText("Press SPACE for instructions");
+        inslabel.setText("Press ENTER for instructions");
         
         startlabel.setFont(new Font( "Serif", Font.PLAIN, 35));
         startlabel.setForeground(textColor);
-        startlabel.setText("Press ENTER to start");
+        startlabel.setText("Press SPACE to start");
         
         panel.repaint();
         frame.pack();
