@@ -27,12 +27,12 @@ public class Instructions extends Screen{
         
         label.setFont(new Font( "Serif", Font.PLAIN, 30));
         label.setForeground(textColor);
-        label.setText("The aim of the game is to guess all of the correct zodiac symbols."
-        		+ \n + "There will be no time limit, so there's no rush. Move around the "
-        		+ \n + "letters on the screen to make the correct words. Once you have done "
-        		+ \n + "that, move onto the next word. Once you have guessed all twelve signs, "
-        		+ \n + "you will have finished the game. If you guess the wrong sign, the game "
-        		+ \n + "will restart.");
+        label.setText("<html> The aim of the game is to guess all of the correct zodiac symbols. "
+        		+ "There will be no time limit, so there's no rush. Move around the "
+        		+ "letters on the screen to make the correct words. Once you have done "
+        		+ "that, move onto the next word. Once you have guessed all twelve signs, "
+        		+ "you will have finished the game. If you guess the wrong sign, the game"
+        		+ "will restart.</html>");
         panel.repaint();
         frame.pack();
 	}

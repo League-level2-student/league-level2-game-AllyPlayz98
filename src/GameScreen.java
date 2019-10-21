@@ -9,14 +9,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class GameScreen extends Screen implements ActionListener {
-    JLabel hangmanImage;
     JTextField field;
     JButton guess;
     
     public GameScreen( JFrame frame ) {
         super( frame );
         
-        backgroundColor = new Color(255, 125, 25);
+        backgroundColor = new Color(170, 136, 255);
+        Color textColor = new Color(51, 136, 221);
         field = new JTextField( 20 );
         guess = new JButton( "Guess" );
     }
@@ -25,10 +25,9 @@ public class GameScreen extends Screen implements ActionListener {
         frame.add( panel );
         panel.setBackground( backgroundColor );
         
-        hangmanImage = createLabelImage( "Snoose5.png" );
         c.gridx = 0;
         c.gridy = 0;
-        panel.add( hangmanImage, c );
+
         
         c.gridx = 0;
         c.gridy = 1;

@@ -10,7 +10,7 @@ public class EndScreen extends Screen {
     public EndScreen(JFrame frame) {
         super( frame );
         
-        backgroundColor = new Color( 0, 125, 25 );
+        backgroundColor = new Color(170, 136, 255);
         label = new JLabel();
     }
 
