@@ -1,4 +1,6 @@
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 
 import javax.swing.JFrame;
@@ -12,7 +14,7 @@ public class Instructions extends Screen{
         backgroundColor = new Color(170, 136, 255);
         textColor = new Color (51, 136, 221);
         label = new JLabel();
-        
+        panel.setLayout(new FlowLayout());
 	}
 	public void drawInstructions() {
 		// TODO Auto-generated method stub
@@ -27,13 +29,20 @@ public class Instructions extends Screen{
         
         label.setFont(new Font( "Serif", Font.PLAIN, 30));
         label.setForeground(textColor);
-        label.setText("<html> The aim of the game is to guess all of the correct zodiac symbols. "
-        		+ "There will be no time limit, so there's no rush. Move around the "
-        		+ "letters on the screen to make the correct words. Once you have done "
-        		+ "that, move onto the next word. Once you have guessed all twelve signs, "
-        		+ "you will have finished the game. If you guess the wrong sign, the game"
-        		+ "will restart.</html>");
+        label.setVerticalAlignment(JLabel.TOP);
+        label.setHorizontalAlignment(JLabel.CENTER);
+        label.setPreferredSize(new Dimension (WIDTH-100, HEIGHT));
+        label.setText("<html><br/><br/><br/><br/><br/><br/><br/><br/>INSTRUCTIONS:"
+        		+ "<br/>The aim of the game is to guess all of the"
+        		+ "<br/>correct zodiac symbols. There will be no time"
+        		+ "<br/>limit, so there's no rush. Use the scrambled"
+        		+ "<br/>letters on the screen to guess the correct sign."
+        		+ "<br/>Once that has been done, move onto the next"
+        		+ "<br/>symbol. After all twelve signs have been guessed"
+        		+ "<br/>correctly,the game will be finished. If the wrong"
+        		+ "<br/>sign is guessed, the game will restart.</html>");
         panel.repaint();
         frame.pack();
+        //frame.setFocusable(true);
 	}
 }

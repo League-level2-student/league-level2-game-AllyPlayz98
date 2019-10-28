@@ -24,7 +24,8 @@ public class ZodiacScramble implements KeyListener {
 	static final int MENU = 0;
 	static final int GAME = 1;
 	static final int END = 2;
-	static final int NUM_STATES = 3;
+	static final int INS = 3;
+	static final int NUM_STATES = 4;
 
 	private int gameState = MENU;
 	JFrame frame;
@@ -68,6 +69,9 @@ public class ZodiacScramble implements KeyListener {
 		// TODO Auto-generated method stub
 		if (gameState == MENU) {
 			menu.removeScreen();
+			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
+				ins.drawInstructions();
+			}
 		} else if (gameState == GAME) {
 			game.removeScreen();
 
@@ -75,9 +79,7 @@ public class ZodiacScramble implements KeyListener {
 			end.removeScreen();
 		}
 
-		if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-			ins.drawInstructions();
-		} else if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+		  if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 			gameState = (gameState + 1) % NUM_STATES;
 			selectScreen();
 		}
