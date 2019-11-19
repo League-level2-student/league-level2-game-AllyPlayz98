@@ -20,7 +20,7 @@ public class MenuScreen extends Screen {
         startlabel = new JLabel();
     }
 
-    public void drawMenu() {
+    public void draw() {
     	//c.fill = GridBagConstraints.HORIZONTAL;
     	c.gridx = 0;
     	c.gridy = 0;

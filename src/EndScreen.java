@@ -14,7 +14,7 @@ public class EndScreen extends Screen {
         label = new JLabel();
     }
 
-    public void drawEnd() {
+    public void draw() {
         frame.add( panel );
         panel.add( label );
         panel.setBackground( backgroundColor );

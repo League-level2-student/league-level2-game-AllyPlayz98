@@ -16,7 +16,7 @@ public class Instructions extends Screen{
         label = new JLabel();
         panel.setLayout(new FlowLayout());
 	}
-	public void drawInstructions() {
+	public void draw() {
 		// TODO Auto-generated method stub
 		//c.fill = GridBagConstraints.HORIZONTAL;
     	c.gridx = 0;

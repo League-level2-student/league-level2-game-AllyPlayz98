@@ -30,10 +30,11 @@ public class ZodiacScramble implements KeyListener {
 	private int gameState = MENU;
 	JFrame frame;
 
-	MenuScreen menu;
-	GameScreen game;
-	EndScreen end;
-	Instructions ins;
+	Screen menu;
+	Screen game;
+	Screen end;
+	Screen ins;
+	Screen currentScreen;
 
 	public static void main(String[] args) throws Exception {
 		new ZodiacScramble().startGame();
@@ -49,39 +50,41 @@ public class ZodiacScramble implements KeyListener {
 		game = new GameScreen(frame);
 		end = new EndScreen(frame);
 		ins = new Instructions(frame);
-
-		menu.drawMenu();
+		selectScreen(menu);
 	}
 
-	private void selectScreen() {
-
-		if (gameState == MENU) {
-			menu.drawMenu();
-		} else if (gameState == GAME) {
-			game.drawGame();
-		} else if (gameState == END) {
-			end.drawEnd();
-		}
+	private void selectScreen(Screen screen) {
+		currentScreen = screen;
+		screen.draw();
 	}
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		if (gameState == MENU) {
-			menu.removeScreen();
-			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				ins.drawInstructions();
+		if (currentScreen == menu) {
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				selectScreen(game);
 			}
-		} else if (gameState == GAME) {
-			game.removeScreen();
-
-		} else if (gameState == END) {
-			end.removeScreen();
 		}
-
-		  if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-			gameState = (gameState + 1) % NUM_STATES;
-			selectScreen();
+		if (currentScreen == game) {
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				selectScreen(end);
+			}
+		}
+		if (currentScreen == end) {
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				selectScreen(menu);
+			}
+		}
+		if (currentScreen == menu) {
+			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
+				selectScreen(ins);
+			}
+		}
+		if (currentScreen == ins) {
+			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
+				selectScreen(menu);
+			}
 		}
 	}
 

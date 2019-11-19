@@ -21,7 +21,7 @@ public class GameScreen extends Screen implements ActionListener {
         guess = new JButton( "Guess" );
     }
     
-    public void drawGame() {
+    public void draw() {
         frame.add( panel );
         panel.setBackground( backgroundColor );
         

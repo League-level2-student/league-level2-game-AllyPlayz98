@@ -45,5 +45,9 @@ public class Screen {
         JLabel imageLabel = new JLabel( icon );
         return imageLabel;
     }
+    
+    public void draw() {
+    	
+    }
 
 }
