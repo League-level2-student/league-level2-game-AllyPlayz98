@@ -22,42 +22,19 @@ import javax.swing.JTextField;
 
 public class ZodiacScramble implements KeyListener {
 	static final int MENU = 0;
-	static final int GAMEAr = 1;
-	static final int GAMET = 2;
-	static final int GAMEG = 3;
-	static final int GAMECan = 4;
-	static final int GAMELe = 5;
-	static final int GAMEV = 6;
-	static final int GAMELi = 7;
-	static final int GAMESc = 8;
-	static final int GAMESa = 9;
-	static final int GAMECap = 10;
-	static final int GAMEAq = 11;
-	static final int GAMEP = 12;
-	static final int END = 13;
-	static final int INS = 14;
-	static final int NUM_STATES = 15;
+	static final int GAME = 1;
+	static final int END = 2;
+	static final int INS = 3;
+	static final int NUM_STATES = 4;
 
 	private int gameState = MENU;
 	JFrame frame;
 
 	Screen menu;
-	Screen gameAr;
-	Screen gameT;
-	Screen gameG;
-	Screen gameCan;
-	Screen gameLe;
-	Screen gameV;
-	Screen gameLi;
-	Screen gameSc;
-	Screen gameSa;
-	Screen gameCap;
-	Screen gameAq;
-	Screen gameP;
+	Screen game;
 	Screen end;
 	Screen ins;
 	Screen currentScreen;
-	Screen[] screens = new Screen[12];
 
 	public static void main(String[] args) throws Exception {
 		new ZodiacScramble().startGame();
@@ -70,7 +47,6 @@ public class ZodiacScramble implements KeyListener {
 		frame.addKeyListener(this);
 
 		menu = new MenuScreen(frame);
-		// game = new GameScreen(frame);
 		end = new EndScreen(frame);
 		ins = new Instructions(frame);
 		selectScreen(menu);
