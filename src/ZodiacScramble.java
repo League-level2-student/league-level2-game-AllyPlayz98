@@ -48,6 +48,10 @@ public class ZodiacScramble implements KeyListener {
 
 		menu = new MenuScreen(frame);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		game = new GameScreen(frame);
+>>>>>>> parent of b2d1e9f... ZodiacScramble ip (Continuing work on Instructions panel, Starting work on Game panels)
 =======
 		game = new GameScreen(frame);
 >>>>>>> parent of b2d1e9f... ZodiacScramble ip (Continuing work on Instructions panel, Starting work on Game panels)
