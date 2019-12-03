@@ -1,7 +1,7 @@
 public class WordUtils {
 
-	public static String readLineFromFile(String filename) {
-
-		return "";
-	}
+    public static String readLineFromFile(String filename) {
+    	
+    		return "";
+    }
 }

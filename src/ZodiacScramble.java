@@ -47,6 +47,10 @@ public class ZodiacScramble implements KeyListener {
 		frame.addKeyListener(this);
 
 		menu = new MenuScreen(frame);
+<<<<<<< HEAD
+=======
+		game = new GameScreen(frame);
+>>>>>>> parent of b2d1e9f... ZodiacScramble ip (Continuing work on Instructions panel, Starting work on Game panels)
 		end = new EndScreen(frame);
 		ins = new Instructions(frame);
 		selectScreen(menu);
@@ -62,9 +66,9 @@ public class ZodiacScramble implements KeyListener {
 		// TODO Auto-generated method stub
 		if (currentScreen == menu) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				// selectScreen(game);
+				selectScreen(game);
 			}
-			// } else if (currentScreen == game) {
+		} else if (currentScreen == game) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 				selectScreen(end);
 			}
