@@ -65,11 +65,13 @@ public class ZodiacScramble implements KeyListener {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 				selectScreen(game);
 			}
-		} else if (currentScreen == game) {
+		}
+		if (currentScreen == game) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 				selectScreen(end);
 			}
-		} else if (currentScreen == end) {
+		}
+		if (currentScreen == end) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 				selectScreen(menu);
 			}
@@ -78,7 +80,8 @@ public class ZodiacScramble implements KeyListener {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
 				selectScreen(ins);
 			}
-		} else if (currentScreen == ins) {
+		}
+		if (currentScreen == ins) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
 				selectScreen(menu);
 			}
