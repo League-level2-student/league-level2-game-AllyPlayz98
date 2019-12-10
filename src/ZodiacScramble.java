@@ -57,7 +57,7 @@ public class ZodiacScramble implements KeyListener {
 	Screen end;
 	Screen ins;
 	Screen currentScreen;
-	Screen[] screens = new Screen[12];
+	Screen[] signs = new Screen[12];
 
 	public static void main(String[] args) throws Exception {
 		new ZodiacScramble().startGame();
@@ -68,7 +68,33 @@ public class ZodiacScramble implements KeyListener {
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(this);
+		
+		gameAr = new Screen(frame);
+		gameT = new Screen(frame);
+		gameG = new Screen(frame);
+		gameCan = new Screen(frame);
+		gameLe = new Screen(frame);
+		gameV = new Screen(frame);
+		gameLi = new Screen(frame);
+		gameSc = new Screen(frame);
+		gameSa = new Screen(frame);
+		gameCap = new Screen(frame);
+		gameAq = new Screen(frame);
+		gameP = new Screen(frame);
 
+		signs[0] = gameAr;
+		signs[1] = gameT;
+		signs[2] = gameG;
+		signs[3] = gameCan;
+		signs[4] = gameLe;
+		signs[5] = gameV;
+		signs[6] = gameLi;
+		signs[7] = gameSc;
+		signs[8] = gameSa;
+		signs[9] = gameCap;
+		signs[10] = gameAq;
+		signs[11] = gameP;
+		
 		menu = new MenuScreen(frame);
 		// game = new GameScreen(frame);
 		end = new EndScreen(frame);
@@ -86,13 +112,38 @@ public class ZodiacScramble implements KeyListener {
 		// TODO Auto-generated method stub
 		if (currentScreen == menu) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				// selectScreen(game);
+				selectScreen(gameAr);
 			}
-			// } else if (currentScreen == game) {
+		} else if (currentScreen == gameAr) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				selectScreen(end);
+				selectScreen(gameT);
 			}
-		} else if (currentScreen == end) {
+
+		} else if (currentScreen == gameT) {
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				selectScreen(gameG);
+			}
+		} else if (currentScreen == gameG) {
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				selectScreen(gameCan);
+			}
+		}
+		else if (currentScreen == gameCan) {
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				selectScreen(gameLe);
+			}
+		}
+		else if (currentScreen == gameLe) {
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				selectScreen(gameV);
+			}
+		}
+		else if (currentScreen == gameV) {
+		//	if ()
+			
+		}
+
+		else if (currentScreen == end) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 				selectScreen(menu);
 			}
