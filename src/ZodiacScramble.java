@@ -37,6 +37,7 @@ public class ZodiacScramble implements KeyListener {
 	static final int END = 13;
 	static final int INS = 14;
 	static final int NUM_STATES = 15;
+	int index = -1;
 
 	private int gameState = MENU;
 	JFrame frame;
@@ -68,7 +69,7 @@ public class ZodiacScramble implements KeyListener {
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(this);
-		
+
 		gameAr = new Screen(frame);
 		gameT = new Screen(frame);
 		gameG = new Screen(frame);
@@ -94,7 +95,7 @@ public class ZodiacScramble implements KeyListener {
 		signs[9] = gameCap;
 		signs[10] = gameAq;
 		signs[11] = gameP;
-		
+
 		menu = new MenuScreen(frame);
 		// game = new GameScreen(frame);
 		end = new EndScreen(frame);
@@ -110,51 +111,45 @@ public class ZodiacScramble implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		if (currentScreen == menu) {
-			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				selectScreen(gameAr);
-			}
-		} else if (currentScreen == gameAr) {
-			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				selectScreen(gameT);
-			}
+		/*
+		 * if (currentScreen == menu) { if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+		 * selectScreen(gameAr); } } else if (currentScreen == gameAr) { if
+		 * (arg0.getKeyCode() == KeyEvent.VK_SPACE) { selectScreen(gameT); }
+		 * 
+		 * } else if (currentScreen == gameT) { if (arg0.getKeyCode() ==
+		 * KeyEvent.VK_SPACE) { selectScreen(gameG); } } else if (currentScreen ==
+		 * gameG) { if (arg0.getKeyCode() == KeyEvent.VK_SPACE) { selectScreen(gameCan);
+		 * } } else if (currentScreen == gameCan) { if (arg0.getKeyCode() ==
+		 * KeyEvent.VK_SPACE) { selectScreen(gameLe); } } else if (currentScreen ==
+		 * gameLe) { if (arg0.getKeyCode() == KeyEvent.VK_SPACE) { selectScreen(gameV);
+		 * } }
+		 */
+		// else if (currentScreen == gameV) {
+		// if ()
 
-		} else if (currentScreen == gameT) {
-			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				selectScreen(gameG);
-			}
-		} else if (currentScreen == gameG) {
-			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				selectScreen(gameCan);
-			}
-		}
-		else if (currentScreen == gameCan) {
-			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				selectScreen(gameLe);
-			}
-		}
-		else if (currentScreen == gameLe) {
-			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				selectScreen(gameV);
-			}
-		}
-		else if (currentScreen == gameV) {
-		//	if ()
-			
-		}
-
-		else if (currentScreen == end) {
+		// }
+		if (currentScreen == end) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 				selectScreen(menu);
-			}
-		}
-		if (currentScreen == menu) {
-			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				selectScreen(ins);
 			}
 		} else if (currentScreen == ins) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
 				selectScreen(menu);
+			}
+		} else if (currentScreen == menu) {
+			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
+				selectScreen(ins);
+			}
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				index++;
+				System.out.println(index);
+				selectScreen(signs[index]);
+			}
+		} else {
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				index++;
+				System.out.println(index);
+				selectScreen(signs[index]);
 			}
 		}
 	}
