@@ -22,23 +22,23 @@ public class GameScreen extends Screen implements ActionListener {
 	}
 
 	public void draw() {
-		frame.add(panel);
-		panel.setBackground(backgroundColor);
+		frame.add(this);
+		this.setBackground(backgroundColor);
 
 		c.gridx = 0;
 		c.gridy = 0;
 
 		c.gridx = 0;
 		c.gridy = 1;
-		panel.add(field, c);
+		this.add(field, c);
 
 		c.gridx = 0;
 		c.gridy = 2;
-		panel.add(guess, c);
+		this.add(guess, c);
 
 		guess.addActionListener(this);
 
-		panel.repaint();
+		this.repaint();
 		frame.pack();
 	}
 

@@ -24,23 +24,23 @@ public class MenuScreen extends Screen {
 		// c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 0;
 		c.gridy = 0;
-		panel.add(label, c);
+		this.add(label, c);
 
 		// c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 0;
 		c.gridy = 1;
-		panel.add(inslabel, c);
+		this.add(inslabel, c);
 
 		// c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 0;
 		c.gridy = 2;
-		panel.add(startlabel, c);
+		this.add(startlabel, c);
 
-		frame.add(panel);
+		frame.add(this);
 		// panel.add(inslabel);
 		// panel.add(startlabel);
 		// panel.add(label);
-		panel.setBackground(backgroundColor);
+		this.setBackground(backgroundColor);
 
 		label.setFont(new Font("Serif", Font.PLAIN, 40));
 		label.setForeground(textColor);
@@ -54,7 +54,7 @@ public class MenuScreen extends Screen {
 		startlabel.setForeground(textColor);
 		startlabel.setText("Press SPACE to start");
 
-		panel.repaint();
+		this.repaint();
 		frame.pack();
 	}
 

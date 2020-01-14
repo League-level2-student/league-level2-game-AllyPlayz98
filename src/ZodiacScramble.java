@@ -70,7 +70,7 @@ public class ZodiacScramble implements KeyListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(this);
 
-		gameAr = new Screen(frame);
+		gameAr = new gameAr(frame);
 		gameT = new Screen(frame);
 		gameG = new Screen(frame);
 		gameCan = new Screen(frame);

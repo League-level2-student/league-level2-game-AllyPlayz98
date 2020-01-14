@@ -15,7 +15,7 @@ public class Instructions extends Screen {
 		backgroundColor = new Color(170, 136, 255);
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
-		panel.setLayout(new FlowLayout());
+		this.setLayout(new FlowLayout());
 	}
 
 	public void draw() {
@@ -23,11 +23,11 @@ public class Instructions extends Screen {
 		// c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 0;
 		c.gridy = 0;
-		panel.add(label, c);
+		this.add(label, c);
 
-		frame.add(panel);
+		frame.add(this);
 		// panel.add(label);
-		panel.setBackground(backgroundColor);
+		this.setBackground(backgroundColor);
 
 		label.setFont(new Font("Serif", Font.PLAIN, 30));
 		label.setForeground(textColor);
@@ -43,7 +43,7 @@ public class Instructions extends Screen {
 				+ "<br/>symbol. After all twelve signs have been guessed"
 				+ "<br/>correctly,the game will be finished. If the wrong"
 				+ "<br/>sign is guessed, the game will restart.</html>");
-		panel.repaint();
+		this.repaint();
 		frame.pack();
 		// frame.setFocusable(true);
 	}

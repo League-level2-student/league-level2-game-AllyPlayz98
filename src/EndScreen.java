@@ -15,12 +15,12 @@ public class EndScreen extends Screen {
 	}
 
 	public void draw() {
-		frame.add(panel);
-		panel.add(label);
-		panel.setBackground(backgroundColor);
+		frame.add(this);
+		this.add(label);
+		this.setBackground(backgroundColor);
 		label.setFont(new Font("Serif", Font.PLAIN, 80));
 		label.setText("END");
-		panel.repaint();
+		this.repaint();
 		frame.pack();
 	}
 }
