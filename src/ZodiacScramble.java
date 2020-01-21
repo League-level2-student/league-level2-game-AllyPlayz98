@@ -100,6 +100,7 @@ public class ZodiacScramble implements KeyListener {
 		// game = new GameScreen(frame);
 		end = new EndScreen(frame);
 		ins = new Instructions(frame);
+		selectScreen(ins);
 		selectScreen(menu);
 	}
 

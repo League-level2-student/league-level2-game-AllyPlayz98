@@ -18,6 +18,8 @@ public class Screen extends JPanel{
 	GridBagConstraints c;
 	Dimension panelSize;
 	Color backgroundColor;
+	
+	Screen[] signimages = new Screen[12];
 
 	public Screen(JFrame frame) {
 		this.frame = frame;
@@ -27,6 +29,20 @@ public class Screen extends JPanel{
 		frame.setPreferredSize(panelSize);
 		this.setLayout(new GridBagLayout());
 		frame.pack();
+	/*	
+		signimages[0] = gameAr;
+		signimages[1] = gameT;
+		signimages[2] = gameG;
+		signimages[3] = gameCan;
+		signimages[4] = gameLe;
+		signimages[5] = gameV;
+		signimages[6] = gameLi;
+		signimages[7] = gameSc;
+		signimages[8] = gameSa;
+		signimages[9] = gameCap;
+		signimages[10] = gameAq;
+		signimages[11] = gameP;
+		*/
 	}
 
 	public void removeScreen() {
