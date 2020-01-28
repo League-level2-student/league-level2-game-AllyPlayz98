@@ -33,7 +33,7 @@ public class Screen extends JPanel{
 		frame.setPreferredSize(panelSize);
 		this.setLayout(new GridBagLayout());
 		try {
-			imageB = ImageIO.read(this.getClass().getResourceAsStream("a.png"));
+			imageB = ImageIO.read(this.getClass().getResourceAsStream("b.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
