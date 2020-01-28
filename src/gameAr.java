@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,7 +26,7 @@ public class gameAr extends Screen {
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
-		this.add(guessBox);
+		this.add(guessBox);	
 
 		// TODO Auto-generated constructor stub
 	}
@@ -65,6 +66,9 @@ public class gameAr extends Screen {
 		this.repaint();
 		frame.pack();
 
+	}
+	public void paintComponent(Graphics g) {
+		g.drawImage(imageB, 500, 65, 100, 100, null);
 	}
 
 }
