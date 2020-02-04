@@ -21,7 +21,24 @@ public class Screen extends JPanel{
 	GridBagConstraints c;
 	Dimension panelSize;
 	Color backgroundColor;
+	//public static BufferedImage imageA;
 	public static BufferedImage imageB;
+	public static BufferedImage imageC;
+	public static BufferedImage imageE;
+	public static BufferedImage imageG;
+	public static BufferedImage imageI;
+	public static BufferedImage imageL;
+	public static BufferedImage imageM;
+	public static BufferedImage imageN;
+	public static BufferedImage imageO;
+	public static BufferedImage imageP;
+	public static BufferedImage imageQ;
+	public static BufferedImage imageR;
+	public static BufferedImage imageS;
+	public static BufferedImage imageT;
+	public static BufferedImage imageU;
+	public static BufferedImage imageV;
+	
 	
 	Screen[] signimages = new Screen[12];
 
@@ -33,7 +50,23 @@ public class Screen extends JPanel{
 		frame.setPreferredSize(panelSize);
 		this.setLayout(new GridBagLayout());
 		try {
+			//imageA = ImageIO.read(this.getClass().getResourceAsStream("a.png"));
 			imageB = ImageIO.read(this.getClass().getResourceAsStream("b.png"));
+			imageC = ImageIO.read(this.getClass().getResourceAsStream("c.png"));
+			imageE = ImageIO.read(this.getClass().getResourceAsStream("e.png"));
+			imageG = ImageIO.read(this.getClass().getResourceAsStream("g.png"));
+			imageI = ImageIO.read(this.getClass().getResourceAsStream("i.png"));
+			imageL = ImageIO.read(this.getClass().getResourceAsStream("l.png"));
+			imageM = ImageIO.read(this.getClass().getResourceAsStream("m.png"));
+			imageN = ImageIO.read(this.getClass().getResourceAsStream("n.png"));
+			imageO = ImageIO.read(this.getClass().getResourceAsStream("o.png"));
+			imageP = ImageIO.read(this.getClass().getResourceAsStream("p.png"));
+			imageQ = ImageIO.read(this.getClass().getResourceAsStream("q.png"));
+			imageR = ImageIO.read(this.getClass().getResourceAsStream("r.png"));
+			imageS = ImageIO.read(this.getClass().getResourceAsStream("s.png"));
+			imageT = ImageIO.read(this.getClass().getResourceAsStream("t.png"));
+			imageU = ImageIO.read(this.getClass().getResourceAsStream("u.png"));
+			imageV = ImageIO.read(this.getClass().getResourceAsStream("v.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

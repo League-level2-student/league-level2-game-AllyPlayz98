@@ -4,17 +4,16 @@ import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class gameAr extends Screen {
+public class gameG extends Screen {
 	Color textColor;
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
 	JTextField guessBox;
 
-	public gameAr(JFrame frame) {
+	public gameG(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(170, 136, 255);
 		frame.add(this);
@@ -67,14 +66,13 @@ public class gameAr extends Screen {
 		frame.pack();
 
 	}
-	public void paintComponent(Graphics g) {	
-		g.drawImage(imageG, 500, 140, 100, 100, null);
-		g.drawImage(imageE, 400, 140, 100, 100, null);
-		g.drawImage(imageM, 100, 140, 100, 100, null);
-		g.drawImage(imageI, 200, 140, 100, 100, null);
-		g.drawImage(imageN, 300, 140, 100, 100, null);
-		g.drawImage(imageI, 600, 140, 100, 100, null);
-	
+	public void paintComponent(Graphics g) {
+		g.drawImage(imageG, 500, 65, 100, 100, null);
+		g.drawImage(imageE, 400, 65, 100, 100, null);
+		g.drawImage(imageM, 300, 65, 100, 100, null);
+		g.drawImage(imageI, 200, 65, 100, 100, null);
+		g.drawImage(imageN, 100, 65, 100, 100, null);
+		g.drawImage(imageI, 600, 65, 100, 100, null);
 	}
 
 }
