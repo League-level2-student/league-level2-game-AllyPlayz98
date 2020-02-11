@@ -1,20 +1,20 @@
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class gameAr extends Screen {
+public class gameSc extends Screen {
 	Color textColor;
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
 	JTextField guessBox;
 
-	public gameAr(JFrame frame) {
+	public gameSc(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(170, 136, 255);
 		frame.add(this);
@@ -26,16 +26,11 @@ public class gameAr extends Screen {
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
-		this.add(guessBox);	
+		this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
 	}
 
-	public boolean checkBox() {
-		return false;
-		
-	}
-	
 	public void draw() {
 
 		// c.fill = GridBagConstraints.HORIZONTAL;
@@ -66,18 +61,21 @@ public class gameAr extends Screen {
 
 		guessBox.setFont(new Font("Serif", Font.PLAIN, 35));
 		guessBox.setForeground(textColor);
-//		guessBox.setSize(5000, 20);
+//			guessBox.setSize(5000, 20);
 
 		this.repaint();
 		frame.pack();
 
 	}
-	public void paintComponent(Graphics g) {	
-		g.drawImage(imageA, 550, 140, 100, 100, null);
-		g.drawImage(imageR, 250, 140, 100, 100, null);
-		g.drawImage(imageI, 150, 140, 100, 100, null);
-		g.drawImage(imageE, 450, 140, 100, 100, null);
-		g.drawImage(imageS, 350, 140, 100, 100, null);
+
+	public void paintComponent(Graphics g) {
+		g.drawImage(imageS, 450, 65, 100, 100, null);
+		g.drawImage(imageC, 350, 65, 100, 100, null);
+		g.drawImage(imageO, 250, 65, 100, 100, null);
+		g.drawImage(imageR, 150, 65, 100, 100, null);
+		g.drawImage(imageP, 50, 65, 100, 100, null);
+		g.drawImage(imageI, 550, 65, 100, 100, null);
+		g.drawImage(imageO, 650, 65, 100, 100, null);
 	}
 
 }

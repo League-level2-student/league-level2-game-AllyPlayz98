@@ -43,18 +43,18 @@ public class ZodiacScramble implements KeyListener {
 	JFrame frame;
 
 	Screen menu;
-	Screen gameAr;
-	Screen gameT;
-	Screen gameG;
-	Screen gameCan;
-	Screen gameLe;
-	Screen gameV;
-	Screen gameLi;
-	Screen gameSc;
-	Screen gameSa;
-	Screen gameCap;
-	Screen gameAq;
-	Screen gameP;
+	gameAr gameAr;
+	gameT gameT;
+	gameG gameG;
+	gameCan gameCan;
+	gameLe gameLe;
+	gameV gameV;
+	gameLi gameLi;
+	//gameSc gameSc;
+	gameSa gameSa;
+	gameCap gameCap;
+	gameAq gameAq;
+	gameP gameP;
 	Screen end;
 	Screen ins;
 	Screen currentScreen;
@@ -71,17 +71,17 @@ public class ZodiacScramble implements KeyListener {
 		frame.addKeyListener(this);
 
 		gameAr = new gameAr(frame);
-		gameT = new Screen(frame);
-		gameG = new Screen(frame);
-		gameCan = new Screen(frame);
-		gameLe = new Screen(frame);
-		gameV = new Screen(frame);
-		gameLi = new Screen(frame);
-		gameSc = new Screen(frame);
-		gameSa = new Screen(frame);
-		gameCap = new Screen(frame);
-		gameAq = new Screen(frame);
-		gameP = new Screen(frame);
+		gameT = new gameT(frame);
+		gameG = new gameG(frame);
+		gameCan = new gameCan(frame);
+		gameLe = new gameLe(frame);
+		gameV = new gameV(frame);
+		gameLi = new gameLi(frame);
+		//gameSc = new gameSc(frame);
+		gameSa = new gameSa(frame);
+		gameCap = new gameCap(frame);
+		gameAq = new gameAq(frame);
+		gameP = new gameP(frame);
 
 		signs[0] = gameAr;
 		signs[1] = gameT;
@@ -90,7 +90,7 @@ public class ZodiacScramble implements KeyListener {
 		signs[4] = gameLe;
 		signs[5] = gameV;
 		signs[6] = gameLi;
-		signs[7] = gameSc;
+		//signs[7] = gameSc;
 		signs[8] = gameSa;
 		signs[9] = gameCap;
 		signs[10] = gameAq;
@@ -132,6 +132,12 @@ public class ZodiacScramble implements KeyListener {
 		if (currentScreen == end) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 				selectScreen(menu);
+			}
+		} else if (currentScreen == gameAr) {
+			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
+				if (gameAr.checkBox()) {
+					selectScreen(gameT);
+				}
 			}
 		} else if (currentScreen == ins) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {

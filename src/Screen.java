@@ -21,7 +21,7 @@ public class Screen extends JPanel{
 	GridBagConstraints c;
 	Dimension panelSize;
 	Color backgroundColor;
-	//public static BufferedImage imageA;
+	public static BufferedImage imageA;
 	public static BufferedImage imageB;
 	public static BufferedImage imageC;
 	public static BufferedImage imageE;
@@ -50,7 +50,7 @@ public class Screen extends JPanel{
 		frame.setPreferredSize(panelSize);
 		this.setLayout(new GridBagLayout());
 		try {
-			//imageA = ImageIO.read(this.getClass().getResourceAsStream("a.png"));
+			imageA = ImageIO.read(this.getClass().getResourceAsStream("a.png"));
 			imageB = ImageIO.read(this.getClass().getResourceAsStream("b.png"));
 			imageC = ImageIO.read(this.getClass().getResourceAsStream("c.png"));
 			imageE = ImageIO.read(this.getClass().getResourceAsStream("e.png"));
