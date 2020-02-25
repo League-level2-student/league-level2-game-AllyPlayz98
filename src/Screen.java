@@ -13,8 +13,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
-public class Screen extends JPanel{
+public class Screen extends JPanel {
 	static final int WIDTH = 800;
 	static final int HEIGHT = 800;
 	JFrame frame;
@@ -38,14 +39,15 @@ public class Screen extends JPanel{
 	public static BufferedImage imageT;
 	public static BufferedImage imageU;
 	public static BufferedImage imageV;
-	
-	
+	JTextField guessBox;
+
 	Screen[] signimages = new Screen[12];
 
 	public Screen(JFrame frame) {
 		this.frame = frame;
 		c = new GridBagConstraints();
 		panelSize = new Dimension(Screen.WIDTH, Screen.HEIGHT);
+		guessBox = new JTextField(20);
 
 		frame.setPreferredSize(panelSize);
 		this.setLayout(new GridBagLayout());
@@ -72,7 +74,7 @@ public class Screen extends JPanel{
 			e.printStackTrace();
 		}
 		frame.pack();
-		
+
 	}
 
 	public void removeScreen() {
@@ -92,6 +94,15 @@ public class Screen extends JPanel{
 
 	public void draw() {
 
+	}
+
+	public boolean checkAnswer(String correct) {
+		String answer = guessBox.getText();
+		if (answer.equals(correct)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }

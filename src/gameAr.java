@@ -12,30 +12,30 @@ public class gameAr extends Screen {
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
-	JTextField guessBox;
+	ZodiacScramble zs;
 
-	public gameAr(JFrame frame) {
-		super(frame);
+	public gameAr(ZodiacScramble zs) {
+		super(zs.frame);
+		this.zs = zs;
 		backgroundColor = new Color(170, 136, 255);
 		frame.add(this);
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
 		// startLabel = new JLabel();
-		guessBox = new JTextField(20);
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
-		this.add(guessBox);	
+		this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
 	}
 
 	public boolean checkBox() {
 		return false;
-		
+
 	}
-	
+
 	public void draw() {
 
 		// c.fill = GridBagConstraints.HORIZONTAL;
@@ -68,11 +68,14 @@ public class gameAr extends Screen {
 		guessBox.setForeground(textColor);
 //		guessBox.setSize(5000, 20);
 
+		guessBox.addKeyListener(zs);
+
 		this.repaint();
 		frame.pack();
 
 	}
-	public void paintComponent(Graphics g) {	
+
+	public void paintComponent(Graphics g) {
 		g.drawImage(imageA, 550, 140, 100, 100, null);
 		g.drawImage(imageR, 250, 140, 100, 100, null);
 		g.drawImage(imageI, 150, 140, 100, 100, null);

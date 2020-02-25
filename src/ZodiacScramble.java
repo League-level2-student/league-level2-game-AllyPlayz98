@@ -38,6 +38,7 @@ public class ZodiacScramble implements KeyListener {
 	static final int INS = 14;
 	static final int NUM_STATES = 15;
 	int index = -1;
+	JTextField guessBox;
 
 	private int gameState = MENU;
 	JFrame frame;
@@ -50,7 +51,7 @@ public class ZodiacScramble implements KeyListener {
 	gameLe gameLe;
 	gameV gameV;
 	gameLi gameLi;
-	//gameSc gameSc;
+	gameSc gameSc;
 	gameSa gameSa;
 	gameCap gameCap;
 	gameAq gameAq;
@@ -70,14 +71,14 @@ public class ZodiacScramble implements KeyListener {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(this);
 
-		gameAr = new gameAr(frame);
+		gameAr = new gameAr(this);
 		gameT = new gameT(frame);
 		gameG = new gameG(frame);
 		gameCan = new gameCan(frame);
 		gameLe = new gameLe(frame);
 		gameV = new gameV(frame);
 		gameLi = new gameLi(frame);
-		//gameSc = new gameSc(frame);
+		gameSc = new gameSc(frame);
 		gameSa = new gameSa(frame);
 		gameCap = new gameCap(frame);
 		gameAq = new gameAq(frame);
@@ -90,7 +91,7 @@ public class ZodiacScramble implements KeyListener {
 		signs[4] = gameLe;
 		signs[5] = gameV;
 		signs[6] = gameLi;
-		//signs[7] = gameSc;
+		signs[7] = gameSc;
 		signs[8] = gameSa;
 		signs[9] = gameCap;
 		signs[10] = gameAq;
@@ -112,19 +113,6 @@ public class ZodiacScramble implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		/*
-		 * if (currentScreen == menu) { if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-		 * selectScreen(gameAr); } } else if (currentScreen == gameAr) { if
-		 * (arg0.getKeyCode() == KeyEvent.VK_SPACE) { selectScreen(gameT); }
-		 * 
-		 * } else if (currentScreen == gameT) { if (arg0.getKeyCode() ==
-		 * KeyEvent.VK_SPACE) { selectScreen(gameG); } } else if (currentScreen ==
-		 * gameG) { if (arg0.getKeyCode() == KeyEvent.VK_SPACE) { selectScreen(gameCan);
-		 * } } else if (currentScreen == gameCan) { if (arg0.getKeyCode() ==
-		 * KeyEvent.VK_SPACE) { selectScreen(gameLe); } } else if (currentScreen ==
-		 * gameLe) { if (arg0.getKeyCode() == KeyEvent.VK_SPACE) { selectScreen(gameV);
-		 * } }
-		 */
 		// else if (currentScreen == gameV) {
 		// if ()
 
@@ -135,9 +123,8 @@ public class ZodiacScramble implements KeyListener {
 			}
 		} else if (currentScreen == gameAr) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				if (gameAr.checkBox()) {
-					selectScreen(gameT);
-				}
+				checkAnswer();
+				selectScreen(gameT);
 			}
 		} else if (currentScreen == ins) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -171,6 +158,14 @@ public class ZodiacScramble implements KeyListener {
 	public void keyTyped(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 
+	}
+	public boolean checkAnswer(String correct) {
+		String answer = guessBox.getText();
+		if (answer.equals(correct)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }
