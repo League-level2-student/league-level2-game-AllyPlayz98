@@ -13,6 +13,7 @@ public class gameAr extends Screen {
 	JLabel insLabel;
 	JLabel startLabel;
 	ZodiacScramble zs;
+	static JTextField guessBox;
 
 	public gameAr(ZodiacScramble zs) {
 		super(zs.frame);
@@ -22,6 +23,7 @@ public class gameAr extends Screen {
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
+		guessBox = new JTextField(20);
 		// startLabel = new JLabel();
 		this.add(label);
 		this.add(insLabel);
@@ -81,6 +83,10 @@ public class gameAr extends Screen {
 		g.drawImage(imageI, 150, 140, 100, 100, null);
 		g.drawImage(imageE, 450, 140, 100, 100, null);
 		g.drawImage(imageS, 350, 140, 100, 100, null);
+	}
+	static String getTextBox() {
+		guessBox.getText();
+		return guessBox.getText();
 	}
 
 }
