@@ -13,7 +13,6 @@ public class gameV extends Screen {
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
-	JTextField guessBox;
 
 	public gameV(JFrame frame) {
 		super(frame);
@@ -22,14 +21,19 @@ public class gameV extends Screen {
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
-		// startLabel = new JLabel();
 		guessBox = new JTextField(20);
+		// startLabel = new JLabel();
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
 		this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
+	}
+
+	public boolean checkBox() {
+		return false;
+
 	}
 
 	public void draw() {
@@ -62,7 +66,7 @@ public class gameV extends Screen {
 
 		guessBox.setFont(new Font("Serif", Font.PLAIN, 35));
 		guessBox.setForeground(textColor);
-//			guessBox.setSize(5000, 20);
+//		guessBox.setSize(5000, 20);
 
 		this.repaint();
 		frame.pack();
@@ -76,6 +80,11 @@ public class gameV extends Screen {
 		g.drawImage(imageG, 450, 140, 100, 100, null);
 		g.drawImage(imageO, 350, 140, 100, 100, null);
 
+	}
+	void clear() {
+		this.remove(guessBox);
+		this.remove(insLabel);
+		this.remove(frame);
 	}
 
 }

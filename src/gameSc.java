@@ -12,8 +12,7 @@ public class gameSc extends Screen {
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
-	JTextField guessBox;
-
+	
 	public gameSc(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(170, 136, 255);
@@ -21,14 +20,19 @@ public class gameSc extends Screen {
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
-		// startLabel = new JLabel();
 		guessBox = new JTextField(20);
+		// startLabel = new JLabel();
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
 		this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
+	}
+
+	public boolean checkBox() {
+		return false;
+
 	}
 
 	public void draw() {
@@ -61,13 +65,12 @@ public class gameSc extends Screen {
 
 		guessBox.setFont(new Font("Serif", Font.PLAIN, 35));
 		guessBox.setForeground(textColor);
-//			guessBox.setSize(5000, 20);
+//		guessBox.setSize(5000, 20);
 
 		this.repaint();
 		frame.pack();
 
 	}
-
 	public void paintComponent(Graphics g) {
 		g.drawImage(imageS, 450, 65, 100, 100, null);
 		g.drawImage(imageC, 350, 65, 100, 100, null);
@@ -76,6 +79,11 @@ public class gameSc extends Screen {
 		g.drawImage(imageP, 50, 65, 100, 100, null);
 		g.drawImage(imageI, 550, 65, 100, 100, null);
 		g.drawImage(imageO, 650, 65, 100, 100, null);
+	}
+	void clear() {
+		this.remove(guessBox);
+		this.remove(insLabel);
+		this.remove(frame);
 	}
 
 }

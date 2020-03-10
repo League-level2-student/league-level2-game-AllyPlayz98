@@ -12,7 +12,6 @@
 		JLabel label;
 		JLabel insLabel;
 		JLabel startLabel;
-		JTextField guessBox;
 
 		public gameSa(JFrame frame) {
 			super(frame);
@@ -21,14 +20,19 @@
 			textColor = new Color(51, 136, 221);
 			label = new JLabel();
 			insLabel = new JLabel();
-			// startLabel = new JLabel();
 			guessBox = new JTextField(20);
+			// startLabel = new JLabel();
 			this.add(label);
 			this.add(insLabel);
 			// this.add(startLabel);
 			this.add(guessBox);
 
 			// TODO Auto-generated constructor stub
+		}
+
+		public boolean checkBox() {
+			return false;
+
 		}
 
 		public void draw() {
@@ -61,7 +65,7 @@
 
 			guessBox.setFont(new Font("Serif", Font.PLAIN, 35));
 			guessBox.setForeground(textColor);
-//				guessBox.setSize(5000, 20);
+//			guessBox.setSize(5000, 20);
 
 			this.repaint();
 			frame.pack();
@@ -80,6 +84,11 @@
 			g.drawImage(imageI, 225, 155, 70, 70, null);
 			g.drawImage(imageU, 155, 155, 70, 70, null);
 			g.drawImage(imageS, 85, 155, 70, 70, null);
+		}
+		void clear() {
+			this.remove(guessBox);
+			this.remove(insLabel);
+			this.remove(frame);
 		}
 
 	}

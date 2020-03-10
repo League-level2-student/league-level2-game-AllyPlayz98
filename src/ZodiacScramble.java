@@ -58,6 +58,7 @@ public class ZodiacScramble implements KeyListener {
 	Screen end;
 	Screen ins;
 	Screen currentScreen;
+	Screen fail;
 	Screen[] signs = new Screen[12];
 
 	public static void main(String[] args) throws Exception {
@@ -97,9 +98,9 @@ public class ZodiacScramble implements KeyListener {
 		signs[11] = gameP;
 
 		menu = new MenuScreen(frame);
-		// game = new GameScreen(frame);
 		end = new EndScreen(frame);
 		ins = new Instructions(frame);
+		fail = new FailScreen(frame);
 		selectScreen(ins);
 		selectScreen(menu);
 	}
@@ -122,63 +123,231 @@ public class ZodiacScramble implements KeyListener {
 			}
 		} else if (currentScreen == gameAr) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("aries");
+				if (checkAnswer("aries"))
 				selectScreen(gameT);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameT) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("taurus");
+				if (checkAnswer("taurus"))
 				selectScreen(gameG);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		}else if (currentScreen == gameG) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("gemini");
+				if (checkAnswer("gemini"))
 				selectScreen(gameCan);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameCan) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("cancer");
+				if (checkAnswer("cancer"))
 				selectScreen(gameLe);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameLe) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("leo");
+				if (checkAnswer("leo"))
 				selectScreen(gameV);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameV) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("virgo");
+				if (checkAnswer("virgo"))
 				selectScreen(gameLi);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameLi) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("libra");
+				if (checkAnswer("libra"))
 				selectScreen(gameSc);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameSc) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("scorpio");
+				if (checkAnswer("scorpio"))
 				selectScreen(gameSa);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameSa) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("sagittarius");
+				if (checkAnswer("sagittarius"))
 				selectScreen(gameCap);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameCap) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("capricorn");
+				if (checkAnswer("capricorn"))
 				selectScreen(gameAq);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameAq) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("aquarius");
+				if (checkAnswer("aquarius"))
 				selectScreen(gameP);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == gameP) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
-				checkAnswer("pisces");
+				if (checkAnswer("pisces"))
 				selectScreen(end);
+				else {selectScreen(fail); 
+				gameAr.clear();
+				gameT.clear();
+				gameG.clear();
+				gameCan.clear();
+				gameLe.clear();
+				gameV.clear();
+				gameLi.clear();
+				gameSc.clear();
+				gameSa.clear();
+				gameCap.clear();
+				gameAq.clear();
+				gameP.clear();
+				}
 			}
 		} else if (currentScreen == ins) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {

@@ -11,7 +11,6 @@ public class gameLe extends Screen {
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
-	JTextField guessBox;
 
 	public gameLe(JFrame frame) {
 		super(frame);
@@ -20,14 +19,19 @@ public class gameLe extends Screen {
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
-		// startLabel = new JLabel();
 		guessBox = new JTextField(20);
+		// startLabel = new JLabel();
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
-		this.add(guessBox);	
+		this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
+	}
+
+	public boolean checkBox() {
+		return false;
+
 	}
 
 	public void draw() {
@@ -71,6 +75,11 @@ public class gameLe extends Screen {
 		g.drawImage(imageE, 450, 140, 100, 100, null);
 		g.drawImage(imageO, 250, 140, 100, 100, null);
 		
+	}
+	void clear() {
+		this.remove(guessBox);
+		this.remove(insLabel);
+		this.remove(frame);
 	}
 
 }

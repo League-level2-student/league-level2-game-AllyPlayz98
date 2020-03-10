@@ -88,5 +88,10 @@ public class gameAr extends Screen {
 		guessBox.getText();
 		return guessBox.getText();
 	}
+	void clear() {
+		this.remove(guessBox);
+		this.remove(insLabel);
+		this.remove(frame);
+	}
 
 }

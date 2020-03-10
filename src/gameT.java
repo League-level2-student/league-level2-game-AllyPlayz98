@@ -10,8 +10,7 @@ public class gameT extends Screen {
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
-	JTextField guessBox;
-
+	
 	public gameT(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(170, 136, 255);
@@ -19,14 +18,19 @@ public class gameT extends Screen {
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
-		// startLabel = new JLabel();
 		guessBox = new JTextField(20);
+		// startLabel = new JLabel();
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
 		this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
+	}
+
+	public boolean checkBox() {
+		return false;
+
 	}
 
 	public void draw() {
@@ -59,7 +63,7 @@ public class gameT extends Screen {
 
 		guessBox.setFont(new Font("Serif", Font.PLAIN, 35));
 		guessBox.setForeground(textColor);
-//			guessBox.setSize(5000, 20);
+//		guessBox.setSize(5000, 20);
 
 		this.repaint();
 		frame.pack();
@@ -73,6 +77,11 @@ public class gameT extends Screen {
 		g.drawImage(imageR, 200, 65, 100, 100, null);
 		g.drawImage(imageU, 100, 65, 100, 100, null);
 		g.drawImage(imageS, 600, 65, 100, 100, null);
+	}
+	void clear() {
+		this.remove(guessBox);
+		this.remove(insLabel);
+		this.remove(frame);
 	}
 
 }
