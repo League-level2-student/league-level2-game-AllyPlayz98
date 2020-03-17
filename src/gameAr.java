@@ -78,11 +78,11 @@ public class gameAr extends Screen {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(imageA, 550, 140, 100, 100, null);
-		g.drawImage(imageR, 250, 140, 100, 100, null);
-		g.drawImage(imageI, 150, 140, 100, 100, null);
-		g.drawImage(imageE, 450, 140, 100, 100, null);
-		g.drawImage(imageS, 350, 140, 100, 100, null);
+		g.drawImage(imageA, 550, 155, 100, 100, null);
+		g.drawImage(imageR, 250, 155, 100, 100, null);
+		g.drawImage(imageI, 150, 155, 100, 100, null);
+		g.drawImage(imageE, 450, 155, 100, 100, null);
+		g.drawImage(imageS, 350, 155, 100, 100, null);
 	}
 	static String getTextBox() {
 		guessBox.getText();

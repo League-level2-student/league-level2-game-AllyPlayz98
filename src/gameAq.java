@@ -72,14 +72,14 @@ public class gameAq extends Screen {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(imageA, 80, 65, 80, 80, null);
-		g.drawImage(imageQ, 160, 65, 80, 80, null);
-		g.drawImage(imageU, 240, 65, 80, 80, null);
-		g.drawImage(imageA, 320, 65, 80, 80, null);
-		g.drawImage(imageR, 400, 65, 80, 80, null);
-		g.drawImage(imageI, 480, 65, 80, 80, null);
-		g.drawImage(imageU, 560, 65, 80, 80, null);
-		g.drawImage(imageS, 620, 65, 80, 80, null);
+		g.drawImage(imageA, 220, 155, 80, 80, null);
+		g.drawImage(imageQ, 300, 155, 80, 80, null);
+		g.drawImage(imageU, 140, 155, 80, 80, null);
+		g.drawImage(imageA, 540, 155, 80, 80, null);
+		g.drawImage(imageR, 60, 155, 80, 80, null);
+		g.drawImage(imageI, 380, 155, 80, 80, null);
+		g.drawImage(imageU, 640, 155, 80, 80, null);
+		g.drawImage(imageS, 460, 155, 80, 80, null);
 	}
 	void clear() {
 		this.remove(guessBox);

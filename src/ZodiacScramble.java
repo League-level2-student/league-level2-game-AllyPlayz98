@@ -1,4 +1,3 @@
-
 //https://www.pixilart.com
 
 import java.awt.Color;
@@ -362,6 +361,9 @@ public class ZodiacScramble implements KeyListener {
 				System.out.println(index);
 				selectScreen(signs[index]);
 			}
+		} else if (currentScreen == fail) {
+			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
+				selectScreen(menu);
 		} else {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 				index++;
@@ -369,6 +371,7 @@ public class ZodiacScramble implements KeyListener {
 				selectScreen(signs[index]);
 			}
 		}
+	}
 	}
 
 	@Override

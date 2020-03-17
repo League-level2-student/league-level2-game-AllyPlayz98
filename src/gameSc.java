@@ -72,13 +72,13 @@ public class gameSc extends Screen {
 
 	}
 	public void paintComponent(Graphics g) {
-		g.drawImage(imageS, 450, 65, 100, 100, null);
-		g.drawImage(imageC, 350, 65, 100, 100, null);
-		g.drawImage(imageO, 250, 65, 100, 100, null);
-		g.drawImage(imageR, 150, 65, 100, 100, null);
-		g.drawImage(imageP, 50, 65, 100, 100, null);
-		g.drawImage(imageI, 550, 65, 100, 100, null);
-		g.drawImage(imageO, 650, 65, 100, 100, null);
+		g.drawImage(imageS, 450, 155, 100, 100, null);
+		g.drawImage(imageC, 350, 155, 100, 100, null);
+		g.drawImage(imageO, 250, 155, 100, 100, null);
+		g.drawImage(imageR, 150, 155, 100, 100, null);
+		g.drawImage(imageP, 50, 155, 100, 100, null);
+		g.drawImage(imageI, 550, 155, 100, 100, null);
+		g.drawImage(imageO, 650, 155, 100, 100, null);
 	}
 	void clear() {
 		this.remove(guessBox);

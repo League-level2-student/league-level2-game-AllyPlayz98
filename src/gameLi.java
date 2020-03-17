@@ -73,11 +73,11 @@ public class gameLi extends Screen {
 
 	}
 	public void paintComponent(Graphics g) {
-		g.drawImage(imageL, 550, 140, 100, 100, null);
-		g.drawImage(imageI, 250, 140, 100, 100, null);
-		g.drawImage(imageB, 150, 140, 100, 100, null);
-		g.drawImage(imageR, 450, 140, 100, 100, null);
-		g.drawImage(imageA, 350, 140, 100, 100, null);
+		g.drawImage(imageL, 550, 155, 100, 100, null);
+		g.drawImage(imageI, 250, 155, 100, 100, null);
+		g.drawImage(imageB, 150, 155, 100, 100, null);
+		g.drawImage(imageR, 450, 155, 100, 100, null);
+		g.drawImage(imageA, 350, 155, 100, 100, null);
 
 	}
 	void clear() {

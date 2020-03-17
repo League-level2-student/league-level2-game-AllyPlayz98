@@ -74,11 +74,11 @@ public class gameV extends Screen {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(imageV, 550, 140, 100, 100, null);
-		g.drawImage(imageI, 250, 140, 100, 100, null);
-		g.drawImage(imageR, 150, 140, 100, 100, null);
-		g.drawImage(imageG, 450, 140, 100, 100, null);
-		g.drawImage(imageO, 350, 140, 100, 100, null);
+		g.drawImage(imageV, 550, 155, 100, 100, null);
+		g.drawImage(imageI, 250, 155, 100, 100, null);
+		g.drawImage(imageR, 150, 155, 100, 100, null);
+		g.drawImage(imageG, 450, 155, 100, 100, null);
+		g.drawImage(imageO, 350, 155, 100, 100, null);
 
 	}
 	void clear() {

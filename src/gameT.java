@@ -71,12 +71,12 @@ public class gameT extends Screen {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(imageT, 500, 65, 100, 100, null);
-		g.drawImage(imageA, 400, 65, 100, 100, null);
-		g.drawImage(imageU, 300, 65, 100, 100, null);
-		g.drawImage(imageR, 200, 65, 100, 100, null);
-		g.drawImage(imageU, 100, 65, 100, 100, null);
-		g.drawImage(imageS, 600, 65, 100, 100, null);
+		g.drawImage(imageT, 500, 155, 100, 100, null);
+		g.drawImage(imageA, 400, 155, 100, 100, null);
+		g.drawImage(imageU, 300, 155, 100, 100, null);
+		g.drawImage(imageR, 200, 155, 100, 100, null);
+		g.drawImage(imageU, 100, 155, 100, 100, null);
+		g.drawImage(imageS, 600, 155, 100, 100, null);
 	}
 	void clear() {
 		this.remove(guessBox);
