@@ -39,7 +39,7 @@ public class Screen extends JPanel {
 	public static BufferedImage imageT;
 	public static BufferedImage imageU;
 	public static BufferedImage imageV;
-	JTextField guessBox;
+	static JTextField guessBox;
 
 	Screen[] signimages = new Screen[12];
 

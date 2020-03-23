@@ -13,7 +13,6 @@ public class gameAr extends Screen {
 	JLabel insLabel;
 	JLabel startLabel;
 	ZodiacScramble zs;
-	static JTextField guessBox;
 
 	public gameAr(ZodiacScramble zs) {
 		super(zs.frame);
@@ -28,7 +27,7 @@ public class gameAr extends Screen {
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
-		this.add(guessBox);
+		//this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
 	}

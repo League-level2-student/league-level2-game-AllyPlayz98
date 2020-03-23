@@ -24,7 +24,7 @@ public class gameAq extends Screen {
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
-		this.add(guessBox);
+		//this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
 	}
@@ -72,14 +72,14 @@ public class gameAq extends Screen {
 	}
 
 	public void paintComponent(Graphics g) {
-		g.drawImage(imageA, 220, 155, 80, 80, null);
-		g.drawImage(imageQ, 300, 155, 80, 80, null);
-		g.drawImage(imageU, 140, 155, 80, 80, null);
-		g.drawImage(imageA, 540, 155, 80, 80, null);
-		g.drawImage(imageR, 60, 155, 80, 80, null);
-		g.drawImage(imageI, 380, 155, 80, 80, null);
-		g.drawImage(imageU, 640, 155, 80, 80, null);
-		g.drawImage(imageS, 460, 155, 80, 80, null);
+		g.drawImage(imageA, 230, 155, 80, 80, null);
+		g.drawImage(imageQ, 310, 155, 80, 80, null);
+		g.drawImage(imageU, 150, 155, 80, 80, null);
+		g.drawImage(imageA, 550, 155, 80, 80, null);
+		g.drawImage(imageR, 70, 155, 80, 80, null);
+		g.drawImage(imageI, 390, 155, 80, 80, null);
+		g.drawImage(imageU, 630, 155, 80, 80, null);
+		g.drawImage(imageS, 470, 155, 80, 80, null);
 	}
 	void clear() {
 		this.remove(guessBox);

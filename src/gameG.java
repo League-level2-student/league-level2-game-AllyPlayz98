@@ -24,7 +24,7 @@ public class gameG extends Screen {
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
-		this.add(guessBox);
+		//this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
 	}

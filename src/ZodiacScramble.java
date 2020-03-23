@@ -19,7 +19,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class ZodiacScramble implements KeyListener {
+public class ZodiacScramble implements KeyListener{
 	static final int MENU = 0;
 	static final int GAMEAr = 1;
 	static final int GAMET = 2;
@@ -105,6 +105,9 @@ public class ZodiacScramble implements KeyListener {
 	}
 
 	private void selectScreen(Screen screen) {
+		for (int i = 0; i<signs.length; i++) {
+			signs[i].guessBox.setText("");
+		}
 		currentScreen = screen;
 		screen.draw();
 	}
@@ -116,14 +119,11 @@ public class ZodiacScramble implements KeyListener {
 		// if ()
 
 		// }
-		if (currentScreen == end) {
-			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				selectScreen(menu);
-			}
-		} else if (currentScreen == gameAr) {
+		if (currentScreen == gameAr) {
 			if (arg0.getKeyCode() == KeyEvent.VK_ENTER) {
 				if (checkAnswer("aries"))
 				selectScreen(gameT);
+				
 				else {selectScreen(fail); 
 				gameAr.clear();
 				gameT.clear();
