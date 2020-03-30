@@ -17,7 +17,6 @@ public class gameV extends Screen {
 	public gameV(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(170, 136, 255);
-		frame.add(this);
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
@@ -74,6 +73,7 @@ public class gameV extends Screen {
 	}
 
 	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		g.drawImage(imageV, 550, 155, 100, 100, null);
 		g.drawImage(imageI, 250, 155, 100, 100, null);
 		g.drawImage(imageR, 150, 155, 100, 100, null);

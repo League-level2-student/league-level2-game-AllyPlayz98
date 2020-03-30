@@ -79,6 +79,8 @@ public class Screen extends JPanel {
 
 	public void removeScreen() {
 		this.frame.getContentPane().remove(this);
+		this.frame.revalidate();
+		this.frame.repaint();
 	}
 
 	public JLabel createLabelImage(String fileName) {

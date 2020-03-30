@@ -16,7 +16,6 @@
 		public gameSa(JFrame frame) {
 			super(frame);
 			backgroundColor = new Color(170, 136, 255);
-			frame.add(this);
 			textColor = new Color(51, 136, 221);
 			label = new JLabel();
 			insLabel = new JLabel();
@@ -73,6 +72,7 @@
 		}
 
 		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
 			g.drawImage(imageS, 15, 155, 70, 70, null);
 			g.drawImage(imageA, 715, 155, 70, 70, null);
 			g.drawImage(imageG, 645, 155, 70, 70, null);

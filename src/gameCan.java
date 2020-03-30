@@ -16,7 +16,6 @@ public class gameCan extends Screen {
 	public gameCan(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(170, 136, 255);
-		frame.add(this);
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
@@ -73,6 +72,7 @@ public class gameCan extends Screen {
 	}
 
 	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		g.drawImage(imageC, 500, 155, 100, 100, null);
 		g.drawImage(imageA, 400, 155, 100, 100, null);
 		g.drawImage(imageN, 300, 155, 100, 100, null);

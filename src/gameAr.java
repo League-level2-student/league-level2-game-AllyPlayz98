@@ -18,7 +18,6 @@ public class gameAr extends Screen {
 		super(zs.frame);
 		this.zs = zs;
 		backgroundColor = new Color(170, 136, 255);
-		frame.add(this);
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
@@ -77,6 +76,7 @@ public class gameAr extends Screen {
 	}
 
 	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		g.drawImage(imageA, 550, 155, 100, 100, null);
 		g.drawImage(imageR, 250, 155, 100, 100, null);
 		g.drawImage(imageI, 150, 155, 100, 100, null);

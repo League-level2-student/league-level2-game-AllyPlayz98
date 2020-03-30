@@ -15,7 +15,6 @@ public class gameAq extends Screen {
 	public gameAq(JFrame frame) {
 		super(frame);
 		backgroundColor = new Color(170, 136, 255);
-		frame.add(this);
 		textColor = new Color(51, 136, 221);
 		label = new JLabel();
 		insLabel = new JLabel();
@@ -72,6 +71,7 @@ public class gameAq extends Screen {
 	}
 
 	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		g.drawImage(imageA, 230, 155, 80, 80, null);
 		g.drawImage(imageQ, 310, 155, 80, 80, null);
 		g.drawImage(imageU, 150, 155, 80, 80, null);
