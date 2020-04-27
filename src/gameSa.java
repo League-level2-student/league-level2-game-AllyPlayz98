@@ -1,17 +1,20 @@
 
 	import java.awt.Color;
-	import java.awt.Font;
-	import java.awt.Graphics;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.util.Random;
 
 	import javax.swing.JFrame;
-	import javax.swing.JLabel;
-	import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 	public class gameSa extends Screen {
 		Color textColor;
 		JLabel label;
 		JLabel insLabel;
 		JLabel startLabel;
+		BufferedImage[] bufferedImages;
 
 		public gameSa(JFrame frame) {
 			super(frame);
@@ -20,6 +23,26 @@
 			label = new JLabel();
 			insLabel = new JLabel();
 			guessBox = new JTextField(20);
+			bufferedImages = new BufferedImage[11];
+			bufferedImages[0] = imageS;
+			bufferedImages[1] = imageA;
+			bufferedImages[2] = imageG;
+			bufferedImages[3] = imageI;
+			bufferedImages[4] = imageT;
+			bufferedImages[5] = imageT;
+			bufferedImages[6] = imageA;
+			bufferedImages[7] = imageR;
+			bufferedImages[8] = imageI;
+			bufferedImages[9] = imageU;
+			bufferedImages[10] = imageS;
+			for (int i = 0; i < bufferedImages.length; i++) {
+				Random r = new Random();
+				int index1 = r.nextInt(bufferedImages.length);
+				int index2 = r.nextInt(bufferedImages.length);
+				BufferedImage temp = bufferedImages[index1];
+				bufferedImages[index1] = bufferedImages[index2];
+				bufferedImages[index2] = temp;
+			}
 			// startLabel = new JLabel();
 			this.add(label);
 			this.add(insLabel);
@@ -73,17 +96,17 @@
 
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			g.drawImage(imageS, 15, 155, 70, 70, null);
-			g.drawImage(imageA, 715, 155, 70, 70, null);
-			g.drawImage(imageG, 645, 155, 70, 70, null);
-			g.drawImage(imageI, 575, 155, 70, 70, null);
-			g.drawImage(imageT, 505, 155, 70, 70, null);
-			g.drawImage(imageT, 435, 155, 70, 70, null);
-			g.drawImage(imageA, 365, 155, 70, 70, null);
-			g.drawImage(imageR, 295, 155, 70, 70, null);
-			g.drawImage(imageI, 225, 155, 70, 70, null);
-			g.drawImage(imageU, 155, 155, 70, 70, null);
-			g.drawImage(imageS, 85, 155, 70, 70, null);
+			g.drawImage(bufferedImages[0], 15, 155, 70, 70, null);
+			g.drawImage(bufferedImages[1], 715, 155, 70, 70, null);
+			g.drawImage(bufferedImages[2], 645, 155, 70, 70, null);
+			g.drawImage(bufferedImages[3], 575, 155, 70, 70, null);
+			g.drawImage(bufferedImages[4], 505, 155, 70, 70, null);
+			g.drawImage(bufferedImages[5], 435, 155, 70, 70, null);
+			g.drawImage(bufferedImages[6], 365, 155, 70, 70, null);
+			g.drawImage(bufferedImages[7], 295, 155, 70, 70, null);
+			g.drawImage(bufferedImages[8], 225, 155, 70, 70, null);
+			g.drawImage(bufferedImages[9], 155, 155, 70, 70, null);
+			g.drawImage(bufferedImages[10], 85, 155, 70, 70, null);
 		}
 		void clear() {
 			this.remove(guessBox);

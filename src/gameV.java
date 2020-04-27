@@ -2,6 +2,8 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,6 +15,7 @@ public class gameV extends Screen {
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
+	BufferedImage[] bufferedImages;
 
 	public gameV(JFrame frame) {
 		super(frame);
@@ -21,6 +24,20 @@ public class gameV extends Screen {
 		label = new JLabel();
 		insLabel = new JLabel();
 		guessBox = new JTextField(20);
+		bufferedImages = new BufferedImage[5];
+		bufferedImages[0] = imageV;
+		bufferedImages[1] = imageI;
+		bufferedImages[2] = imageR;
+		bufferedImages[3] = imageG;
+		bufferedImages[4] = imageO;
+		for (int i = 0; i < bufferedImages.length; i++) {
+			Random r = new Random();
+			int index1 = r.nextInt(bufferedImages.length);
+			int index2 = r.nextInt(bufferedImages.length);
+			BufferedImage temp = bufferedImages[index1];
+			bufferedImages[index1] = bufferedImages[index2];
+			bufferedImages[index2] = temp;
+		}
 		// startLabel = new JLabel();
 		this.add(label);
 		this.add(insLabel);
@@ -74,11 +91,11 @@ public class gameV extends Screen {
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(imageV, 550, 155, 100, 100, null);
-		g.drawImage(imageI, 250, 155, 100, 100, null);
-		g.drawImage(imageR, 150, 155, 100, 100, null);
-		g.drawImage(imageG, 450, 155, 100, 100, null);
-		g.drawImage(imageO, 350, 155, 100, 100, null);
+		g.drawImage(bufferedImages[0], 550, 155, 100, 100, null);
+		g.drawImage(bufferedImages[1], 250, 155, 100, 100, null);
+		g.drawImage(bufferedImages[2], 150, 155, 100, 100, null);
+		g.drawImage(bufferedImages[3], 450, 155, 100, 100, null);
+		g.drawImage(bufferedImages[4], 350, 155, 100, 100, null);
 
 	}
 	void clear() {

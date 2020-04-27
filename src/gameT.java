@@ -1,6 +1,9 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.util.Random;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -10,6 +13,7 @@ public class gameT extends Screen {
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
+	BufferedImage[] bufferedImages;
 	
 	public gameT(JFrame frame) {
 		super(frame);
@@ -18,6 +22,21 @@ public class gameT extends Screen {
 		label = new JLabel();
 		insLabel = new JLabel();
 		guessBox = new JTextField(20);
+		bufferedImages = new BufferedImage[6];
+		bufferedImages[0] = imageT;
+		bufferedImages[1] = imageA;
+		bufferedImages[2] = imageU;
+		bufferedImages[3] = imageR;
+		bufferedImages[4] = imageU;
+		bufferedImages[5] = imageS;
+		for (int i = 0; i < bufferedImages.length; i++) {
+			Random r = new Random();
+			int index1 = r.nextInt(bufferedImages.length);
+			int index2 = r.nextInt(bufferedImages.length);
+			BufferedImage temp = bufferedImages[index1];
+			bufferedImages[index1] = bufferedImages[index2];
+			bufferedImages[index2] = temp;
+		}
 		// startLabel = new JLabel();
 		this.add(label);
 		this.add(insLabel);
@@ -71,12 +90,12 @@ public class gameT extends Screen {
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(imageT, 500, 155, 100, 100, null);
-		g.drawImage(imageA, 400, 155, 100, 100, null);
-		g.drawImage(imageU, 300, 155, 100, 100, null);
-		g.drawImage(imageR, 200, 155, 100, 100, null);
-		g.drawImage(imageU, 100, 155, 100, 100, null);
-		g.drawImage(imageS, 600, 155, 100, 100, null);
+		g.drawImage(bufferedImages[0], 500, 155, 100, 100, null);
+		g.drawImage(bufferedImages[1], 400, 155, 100, 100, null);
+		g.drawImage(bufferedImages[2], 300, 155, 100, 100, null);
+		g.drawImage(bufferedImages[3], 200, 155, 100, 100, null);
+		g.drawImage(bufferedImages[4], 100, 155, 100, 100, null);
+		g.drawImage(bufferedImages[5], 600, 155, 100, 100, null);
 	}
 	void clear() {
 		this.remove(guessBox);

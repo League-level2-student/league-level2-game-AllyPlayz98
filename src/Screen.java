@@ -81,6 +81,7 @@ public class Screen extends JPanel {
 		this.frame.getContentPane().remove(this);
 		this.frame.revalidate();
 		this.frame.repaint();
+		this.frame.requestFocus();
 	}
 
 	public JLabel createLabelImage(String fileName) {

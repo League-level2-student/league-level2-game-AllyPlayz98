@@ -1,6 +1,8 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,6 +13,7 @@ public class gameLe extends Screen {
 	JLabel label;
 	JLabel insLabel;
 	JLabel startLabel;
+	BufferedImage[] bufferedImages;
 
 	public gameLe(JFrame frame) {
 		super(frame);
@@ -19,6 +22,18 @@ public class gameLe extends Screen {
 		label = new JLabel();
 		insLabel = new JLabel();
 		guessBox = new JTextField(20);
+		bufferedImages = new BufferedImage[3];
+		bufferedImages[0] = imageL;
+		bufferedImages[1] = imageE;
+		bufferedImages[2] = imageO;
+		for (int i = 0; i < bufferedImages.length; i++) {
+			Random r = new Random();
+			int index1 = r.nextInt(bufferedImages.length);
+			int index2 = r.nextInt(bufferedImages.length);
+			BufferedImage temp = bufferedImages[index1];
+			bufferedImages[index1] = bufferedImages[index2];
+			bufferedImages[index2] = temp;
+		}
 		// startLabel = new JLabel();
 		this.add(label);
 		this.add(insLabel);
@@ -71,9 +86,9 @@ public class gameLe extends Screen {
 	}
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(imageL, 350, 155, 100, 100, null);
-		g.drawImage(imageE, 450, 155, 100, 100, null);
-		g.drawImage(imageO, 250, 155, 100, 100, null);
+		g.drawImage(bufferedImages[0], 350, 155, 100, 100, null);
+		g.drawImage(bufferedImages[1], 450, 155, 100, 100, null);
+		g.drawImage(bufferedImages[2], 250, 155, 100, 100, null);
 		
 	}
 	void clear() {

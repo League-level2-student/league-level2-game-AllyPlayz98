@@ -111,6 +111,13 @@ public class ZodiacScramble implements KeyListener {
 		screen.guessBox.setText("");
 		currentScreen = screen;
 		screen.draw();
+		if (screen !=ins&&screen !=menu && screen != end && screen != fail){
+			Screen.guessBox.requestFocus();
+		}
+		System.out.println(currentScreen);
+		if (screen == fail){
+			index=-1;
+		}
 	}
 
 	@Override
@@ -384,12 +391,7 @@ public class ZodiacScramble implements KeyListener {
 					selectScreen(signs[index]);
 				}
 			}
-		} else if (currentScreen == fail) {
-			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
-				selectScreen(menu);
-			}
-		}
-		else if (currentScreen == end) {
+		} else if (currentScreen == end) {
 			if (arg0.getKeyCode() == KeyEvent.VK_SPACE) {
 				selectScreen(menu);
 			}
