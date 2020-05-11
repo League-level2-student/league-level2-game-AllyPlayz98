@@ -43,7 +43,7 @@ public class gameAr extends Screen {
 		this.add(label);
 		this.add(insLabel);
 		// this.add(startLabel);
-		//this.add(guessBox);
+		// this.add(guessBox);
 
 		// TODO Auto-generated constructor stub
 	}
@@ -83,10 +83,11 @@ public class gameAr extends Screen {
 
 		guessBox.setFont(new Font("Serif", Font.PLAIN, 35));
 		guessBox.setForeground(textColor);
-//		guessBox.setSize(5000, 20);
+		// guessBox.setSize(5000, 20);
 
-		guessBox.addKeyListener(zs);
-
+		if (guessBox.getKeyListeners().length == 0) {
+			guessBox.addKeyListener(zs);
+		}
 		this.repaint();
 		frame.pack();
 
@@ -100,10 +101,12 @@ public class gameAr extends Screen {
 		g.drawImage(bufferedImages[3], 450, 155, 100, 100, null);
 		g.drawImage(bufferedImages[4], 350, 155, 100, 100, null);
 	}
+
 	static String getTextBox() {
 		guessBox.getText();
 		return guessBox.getText();
 	}
+
 	void clear() {
 		this.remove(guessBox);
 		this.remove(insLabel);

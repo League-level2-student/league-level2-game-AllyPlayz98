@@ -115,13 +115,14 @@ public class ZodiacScramble implements KeyListener {
 			Screen.guessBox.requestFocus();
 		}
 		System.out.println(currentScreen);
-		if (screen == fail){
+		if (screen == end||screen == fail){
 			index=-1;
 		}
 	}
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
+	System.out.println(arg0.getKeyChar());
 		// TODO Auto-generated method stub
 		// else if (currentScreen == gameV) {
 		// if ()
